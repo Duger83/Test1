@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.read_csv("JCMB_2015_May.csv")
+print(df.dtypes)
+df=df.rename(columns = {'date-time':'Дата-Время'})
+df=df.rename(columns = {'atmospheric pressure (mBar)':'Давление (мБар)'})
+df=df.rename(columns = {'rainfall (mm)':'Осадки (мм)'})
+df=df.rename(columns = {'wind speed (m/s)':'Скорость ветра (м/с)'})
+df=df.rename(columns = {'wind direction (degrees)':'Направление ветра'})
+df=df.rename(columns = {'surface temperature (C)':'Температура воздуха (С)'})
+df=df.rename(columns = {'solar flux (Kw/m2)':'Солнечная энергия (кВт/м2)'})
+df=df.rename(columns = {'relative humidity (%)':'Относительная влажность (%)'})
+df=df.rename(columns = {'battery (V)':'Напряжение батареи (В)'})
+df.head(1000).to_csv('My_file.csv')
+df1 = pd.read_csv("My_file.csv")
+print(df1.head(20))
+print(df1.tail(20))
+print(df1[df1["Относительная влажность (%)"]>80.3])
+print(f'Кол-во уникальных значений влажности = {len(df1["Относительная влажность (%)"].unique())}')
+df3=df1.sort_values('Скорость ветра (м/с)').tail(10)
+df3.plot(x='Дата-Время', y='Скорость ветра (м/с)', title='График', xlabel='Дата', ylabel='Скорость ветра')
+plt.show()
