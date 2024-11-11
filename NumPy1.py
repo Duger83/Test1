@@ -1,0 +1,13 @@
+import numpy as np
+print('Задача 1')
+a = np.zeros((8,8),np.int8)
+print(a)
+print()
+a=np.array([[1 if (i+j)%2 else 0 for j in range(9)] for i in range(9)], dtype=np.int8).reshape((9,9))
+print(a)
+print()
+np.savetxt('Chess.txt', a, fmt='%1.0f')
+print('Задача 2')
+b=np.random.normal(0,5,2000)
+print(f'Мат. ожидание координат вектора = {b.mean():3.6f}')
+print(f'Дисперсия координат вектора = {b.var():3.6f}')
