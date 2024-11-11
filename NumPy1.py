@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 print('Задача 1')
 a = np.zeros((8,8),np.int8)
 print(a)
