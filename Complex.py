@@ -1,6 +1,6 @@
 import math
 
-# для задагия числа в алгебраисеской форме      x = Compl(Re, Im, 'alg')
+# для задания числа в алгебраической форме      x = Compl(Re, Im, 'alg')
 # для задания числа в тригонометрической форме  х = Compl(R, φ, 'pol')
 
 class Compl(object):
@@ -29,7 +29,6 @@ class Compl(object):
         return self
 
 # все вычисления делаем в алгебраической форме
-            
     def __add__(self, no):
         return Compl(self.re + no.re, self.im + no.im, "alg")
 
