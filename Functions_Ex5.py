@@ -1,10 +1,10 @@
 from functools import partial
 
 def _sort_users_by_age(users_list:list, order):
-    if order == 'up':
-        res = sorted(users_list, key=lambda x: x['Age'])
+    way = False
     if order == 'down':
-        res =  sorted(users_list, key=lambda x: x['Age'], reverse=True)       
+        way = True    
+    res = sorted(users_list, key=lambda x: x['Age'], reverse=way)      
     return res
 
 up_sort_users_by_age = partial(_sort_users_by_age, order = 'up')
