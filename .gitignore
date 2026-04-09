@@ -20,5 +20,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Data files (если не хочешь таскать большие CSV в гите, но для домашки лучше оставить)
+# Data files
 # *.csv
